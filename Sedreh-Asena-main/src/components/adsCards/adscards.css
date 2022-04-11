@@ -1,0 +1,106 @@
+.adsCard-container {
+  z-index: 200;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 40%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.adsCard {
+  /* width: 280px;
+  height: 155px; */
+
+  /* width: 290px; */
+  /* height: 160px; */
+
+  width: 350px;
+  height: 193px;
+
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin: 20px 25px;
+  box-shadow: 0px 20.314px 27.0853px rgba(0, 0, 0, 0.04),
+    0px 13.5427px 20.314px rgba(0, 0, 0, 0.04),
+    0px 3.38567px 6.77133px rgba(0, 0, 0, 0.04),
+    0px 0px 0.846416px rgba(0, 0, 0, 0.04);
+}
+
+.adsCard:nth-child(1) {
+  background-image: url("../../assets/images/ads-card-MiAirPurifier.jpg");
+  background-position: 90% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 30;
+}
+
+.adsCard:nth-child(1)::before {
+  content: "";
+  background-image: linear-gradient(
+    to right,
+    rgba(241, 226, 205, 0),
+    rgba(241, 226, 205, 0.65),
+    rgba(241, 226, 205, 0.95),
+    rgba(241, 226, 205, 0.98),
+    #f1e2cd
+  );
+  width: 50%;
+  height: 100%;
+  position: absolute;
+
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  right: -1px;
+  z-index: 50;
+}
+
+.adsCard:nth-child(2) {
+  background-image: url("../../assets/images/ads-card-phone.png");
+  background-position: 0% center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  background-color: #f2f7f9;
+}
+
+.adsCard:nth-child(2)::before {
+  content: "";
+  background-image: linear-gradient(
+    to right,
+    rgba(242, 247, 249, 0),
+    rgba(242, 247, 249, 0.65),
+    rgba(242, 247, 249, 0.99),
+    rgba(242, 247, 249, 0.99),
+    #f2f7f9
+  );
+  width: 52%;
+  height: 100%;
+  position: absolute;
+
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  right: -1px;
+  z-index: 50;
+}
+
+.adsCard-title {
+  color: #575757;
+  font-weight: 500;
+  font-size: 1.2rem;
+  z-index: 60;
+  padding: 10px;
+  line-height: 1.7rem;
+}
+.adsCard-btn {
+  background-color: #0876dd;
+  font-size: 0.7rem;
+  z-index: 60;
+  margin: 10px;
+}

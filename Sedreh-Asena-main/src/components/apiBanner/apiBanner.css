@@ -1,0 +1,82 @@
+.apiBanner-container-1 {
+  background-color: #f6fbff;
+  width: 100%;
+  min-height: 280px;
+  margin-top: 50px;
+}
+.apiBanner-container-2 {
+  display: flex;
+}
+.apiBanner-pic {
+  width: 525px;
+  height: 263px;
+  margin-top: -50px;
+  border-radius: 20px;
+  filter: drop-shadow(0px 24px 32px rgba(0, 0, 0, 0.04))
+    drop-shadow(0px 16px 24px rgba(0, 0, 0, 0.04))
+    drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.04))
+    drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.04));
+}
+.apiBanner-description {
+  margin-right: 50px;
+  margin-top: 30px;
+  width: 100%;
+}
+.apiBanner-description h3 {
+  color: #0876dd;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.apiBanner-description ul {
+  list-style: none;
+  padding: 0;
+  color: #505050;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+.apiBanner-btns {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+.apiBanner-btns button {
+  outline: none;
+  font-size: 1rem;
+  font-weight: 200;
+  padding: 0.5rem 0.8rem;
+  margin-left: 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #0876dd;
+}
+.apiBanner-btn-1 {
+  background-color: #0876dd;
+  color: #f2f7f9;
+}
+.apiBanner-btn-2 {
+  color: #0876dd;
+}
+.apiBanner-btn-1:hover {
+  background-color: #f2f7f9;
+  color: #0876dd;
+}
+.apiBanner-btn-2:hover {
+  background-color: #0876dd;
+  color: #f2f7f9;
+}
+
+@media only screen and (max-width: 992px) {
+  .apiBanner-container-2 {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .apiBanner-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+}

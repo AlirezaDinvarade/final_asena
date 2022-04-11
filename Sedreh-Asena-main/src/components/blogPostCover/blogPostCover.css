@@ -1,0 +1,49 @@
+.blogPostCover-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.blogPostCover-container img {
+  object-fit: cover;
+  aspect-ratio: 1/0.7216;
+  border-radius: 3px;
+}
+
+.blogPostCover-info {
+  background-color: #f6fbff;
+  border-radius: 15px;
+
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.blogPostCover-info .author {
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  color: #292929;
+}
+.blogPostCover-info .date {
+  font-size: 0.8rem;
+  font-weight: 200;
+
+  color: #575757;
+}
+.blogPostCover-info .comments {
+  font-size: 0.8rem;
+  font-weight: 200;
+
+  color: #0876dd;
+}
+.blogPostCover-info .likes {
+  font-size: 0.8rem;
+  font-weight: 200;
+
+  color: #eb392f;
+}

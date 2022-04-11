@@ -1,0 +1,9 @@
+@import url("./../fonts/vazir-font-master/font-face.css");
+
+body {
+  background-color: rgb(238, 238, 238);
+}
+
+.num-font {
+  font-family: VazirFd;
+}

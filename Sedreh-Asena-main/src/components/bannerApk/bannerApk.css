@@ -1,0 +1,102 @@
+.bannerApk {
+  background-image: linear-gradient(to bottom, #0876dd, rgba(8, 118, 221, 0.8));
+  width: 100%;
+  min-height: 260px;
+  padding-bottom: 30px;
+  margin-top: 150px;
+  line-break: auto;
+  position: relative;
+}
+.bannerApk::before {
+  content: "";
+  background-image: url("./../../assets/images/asena-mockup.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 277px;
+  position: absolute;
+  left: clamp(20px, 15vw, 600px);
+  /* left: 15vw; */
+  top: -60px;
+}
+
+.bannerApk-description {
+  width: 60vw;
+  max-width: 800px;
+  padding-top: 20px;
+  text-align: justify;
+}
+
+.bannerApk-title {
+  color: #f2f7f9;
+  font-weight: 900;
+  font-size: 2.25rem;
+}
+
+.bannerApk-contnet {
+  color: rgba(241, 246, 249, 0.8);
+  font-weight: 200;
+  font-size: 1rem;
+  line-height: 2;
+}
+.bannerApk-btns-group {
+  text-align: right;
+}
+.bannerApk-btn {
+  margin-top: 0.3rem;
+  margin-left: 1rem;
+  background-color: #f2f7f9;
+  padding: 0.8rem 1.2rem 0.8rem 2.6rem;
+  color: #0876dd;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  position: relative;
+}
+
+.bannerApk-btn::after {
+  display: inline-block;
+  position: absolute;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  content: "";
+  width: 30px;
+  height: 30px;
+
+  top: 8px;
+}
+
+.bannerApk-btn:nth-child(1)::after {
+  background-image: url("./../../assets/images/cafebazar-logo.png");
+}
+.bannerApk-btn:nth-child(2)::after {
+  background-image: url("./../../assets/images/googleplay-logo.png");
+}
+
+@media only screen and (max-width: 1200px) {
+  .my-navbar {
+    padding-right: 50px;
+  }
+
+  .bannerApk-description {
+    width: 55vw;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .bannerApk::before {
+    top: 20px;
+  }
+  .bannerApk-description {
+    width: 45vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bannerApk-description {
+    width: unset;
+  }
+  .bannerApk::before {
+    display: none;
+  }
+}

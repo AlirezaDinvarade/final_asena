@@ -1,0 +1,35 @@
+.blogForm {
+  margin-inline: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.blogForm input,
+.blogForm textarea {
+  background-color: #f6fbff;
+  color: #292929;
+  font-weight: 300;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.7rem 0.5rem;
+  margin-bottom: 0.5rem !important;
+}
+.blogForm input::placeholder,
+.blogForm textarea::placeholder {
+  color: #9aaec1;
+}
+.blogForm button {
+  border: none;
+  outline: none;
+  background-color: #0876dd;
+  color: #fff;
+  border-radius: 30px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.blogForm button:hover {
+  background-color: #076ac7;
+}

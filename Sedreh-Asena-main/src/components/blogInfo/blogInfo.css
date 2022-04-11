@@ -1,0 +1,39 @@
+.blogInfo {
+  margin-inline: auto;
+  background-color: #f6fbff;
+  padding: 1.7rem 3rem;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.blogInfo > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.blogInfo .typo1 {
+  font-size: 1rem;
+  font-weight: 700;
+
+  color: #292929;
+}
+
+.blogInfo .typo2 {
+  font-size: 1rem;
+  font-weight: 700;
+
+  text-decoration: underline;
+  color: #0876dd;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.blogInfo .typo3 {
+  font-size: 0.9rem;
+  font-weight: 200;
+
+  color: #575757;
+}

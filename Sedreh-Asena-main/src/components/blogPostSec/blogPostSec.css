@@ -1,0 +1,32 @@
+.blogPostSec {
+  margin-inline: auto;
+}
+
+.blogPostSec h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  margin-bottom: 1rem;
+  color: #0876dd;
+}
+
+.blogPostSec p {
+  text-align: justify;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  text-indent: 30px;
+
+  color: #8a8a8a;
+}
+
+.blogPostSec .react-photo-gallery--gallery {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2rem;
+}
+.blogPostSec .react-photo-gallery--gallery img {
+  object-fit: cover;
+}

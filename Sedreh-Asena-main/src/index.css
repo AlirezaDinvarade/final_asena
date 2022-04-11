@@ -1,0 +1,55 @@
+/* html {
+  font-size: 62.5%;
+} */
+
+html {
+  /* overflow-x: hidden; */
+}
+body {
+  margin: 0;
+  font-family: "VazirFd", sans-serif;
+}
+/*global custom scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0876dd;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #054c8f;
+}
+/*my box scrollbar */
+
+/* width */
+.boxScroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.boxScroll::-webkit-scrollbar-track {
+  /* background: #f2f2f2; */
+  background: #f2f2f200;
+}
+
+/* Handle */
+.boxScroll::-webkit-scrollbar-thumb {
+  background: #0876dd;
+  border-radius: 30px;
+}
+
+/* Handle on hover */
+.boxScroll::-webkit-scrollbar-thumb:hover {
+  background: #054c8f;
+}

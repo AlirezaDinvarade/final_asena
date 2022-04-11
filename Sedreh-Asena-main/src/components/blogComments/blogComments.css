@@ -1,0 +1,32 @@
+.blogComments {
+  height: 270px;
+  overflow-y: scroll;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0.7rem;
+}
+
+.blogComments .comment {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  min-height: 50px;
+  background-color: #f6fbff;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blogComments .comment h6 {
+  color: #0876dd;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.blogComments .comment p {
+  text-indent: 30px;
+  margin-bottom: 0;
+
+  font-size: 0.8rem;
+  color: #575757;
+  font-weight: 300;
+}

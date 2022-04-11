@@ -1,0 +1,171 @@
+.servicesDesc-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1500px) {
+  .servicesDesc-container {
+    max-width: 1400px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+}
+.servicesDesc-card {
+  background-color: #f7fbff;
+  width: 80%;
+  padding: 2rem;
+
+  /* max-height: 460px; */
+  max-height: calc(396px + 4rem);
+  border-radius: 20px;
+  display: flex;
+  margin-bottom: 50px;
+}
+.servicesDesc-card:nth-child(odd) {
+  flex-direction: row;
+}
+.servicesDesc-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.servicesDesc-card-img {
+  width: 533px;
+  height: 396px;
+  filter: drop-shadow(0px 24px 32px rgba(0, 0, 0, 0.04))
+    drop-shadow(0px 16px 24px rgba(0, 0, 0, 0.04))
+    drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.04))
+    drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.04));
+  /* border: 1px solid red; */
+}
+.servicesDesc-card:nth-child(odd) .servicesDesc-card-img {
+  transform: translateX(20%);
+  margin-left: -50px;
+}
+.servicesDesc-card:nth-child(even) .servicesDesc-card-img {
+  transform: translateX(-20%);
+  margin-right: -50px;
+}
+
+.servicesDesc-card:nth-child(odd) .servicesDesc-card-content {
+  padding-left: 30px;
+}
+.servicesDesc-card:nth-child(even) .servicesDesc-card-content {
+  padding-right: 30px;
+}
+.servicesDesc-card-content h2 {
+  color: #0876dd;
+  font-weight: 900;
+  font-size: 2.25rem;
+}
+.servicesDesc-card-content p {
+  color: #575757;
+  text-align: justify;
+  font-weight: 200;
+  font-size: 1rem;
+  line-height: 2;
+  margin-top: 20px;
+}
+.servicesDesc-card-content ul {
+  color: #292929;
+  font-weight: 900;
+  font-size: 0.95rem;
+  line-height: 2;
+  margin: 0;
+  list-style-type: square;
+}
+
+@media only screen and (max-width: 1200px) {
+  .servicesDesc-card-content h2 {
+    font-size: 2rem;
+  }
+  .servicesDesc-card-content p {
+    font-size: 0.9rem;
+  }
+  .servicesDesc-card-content ul {
+    font-size: 0.85rem;
+  }
+  .servicesDesc-card {
+    width: 85%;
+  }
+  .servicesDesc-card:nth-child(odd) .servicesDesc-card-img {
+    transform: translateX(15%);
+    margin-left: -45px;
+  }
+  .servicesDesc-card:nth-child(even) .servicesDesc-card-img {
+    transform: translateX(-15%);
+    margin-right: -45px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .servicesDesc-card-content h2 {
+    font-size: 1.95rem;
+  }
+  .servicesDesc-card-img {
+    width: 296px;
+    height: 220px;
+  }
+
+  .servicesDesc-card {
+    padding: 1.5rem;
+    max-height: calc(220px + 3rem);
+    width: 88%;
+  }
+
+  .servicesDesc-card-content p {
+    margin-top: unset;
+    line-height: 1.5;
+  }
+  .servicesDesc-card-content ul {
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+  .servicesDesc-card:nth-child(odd) .servicesDesc-card-content {
+    padding-left: 8px;
+    padding-right: 5px;
+  }
+  .servicesDesc-card:nth-child(even) .servicesDesc-card-content {
+    padding-right: 8px;
+    padding-left: 5px;
+  }
+  .servicesDesc-card:nth-child(odd) .servicesDesc-card-img {
+    transform: translateX(15%);
+    margin-left: -30px;
+  }
+  .servicesDesc-card:nth-child(even) .servicesDesc-card-img {
+    transform: translateX(-15%);
+    margin-right: -30px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .servicesDesc-card-content h2 {
+    font-size: 1.9rem;
+  }
+  .servicesDesc-card-img {
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .servicesDesc-card {
+    flex-direction: column !important;
+    padding: unset;
+    height: auto;
+    max-height: unset;
+    width: 80%;
+  }
+  .servicesDesc-card-content {
+    padding: 1rem 1.3rem !important;
+  }
+
+  .servicesDesc-card:nth-child(odd) .servicesDesc-card-img {
+    transform: translateX(0);
+    margin-left: unset;
+  }
+  .servicesDesc-card:nth-child(even) .servicesDesc-card-img {
+    transform: translateX(0);
+    margin-right: unset;
+  }
+}

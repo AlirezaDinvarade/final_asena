@@ -1,0 +1,81 @@
+.usersOpn-title {
+  text-align: center;
+  margin-top: 50px;
+  color: #575757;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.usersOpn-cards {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.usersOpn-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f6fbff;
+  border-radius: 0px 0px 20px 20px;
+  width: 300px;
+  transition: box-shadow 0.3s ease-out;
+  margin-bottom: 100px;
+}
+.usersOpn-card:hover {
+  box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04),
+    0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+}
+.usersOpn-card img {
+  width: 184px;
+  height: 184px;
+  border-radius: 100%;
+  margin-top: -92px;
+}
+.usersOpn-card-quationMark {
+  background-image: url("../../assets/images/Quotation_marks.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-self: flex-start;
+  margin-right: 20px;
+  width: 71px;
+  height: 55px;
+}
+.usersOpn-card p {
+  text-align: center;
+  padding: 1rem 2rem;
+  color: #575757;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.usersOpn-info {
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+}
+.usersOpn-info-date {
+  padding-right: 1rem !important;
+  color: #575757;
+  font-size: 0.8rem !important;
+  font-weight: 900 !important;
+}
+
+.usersOpn-info-author {
+  color: #0876dd !important;
+  font-size: 0.8rem !important;
+  font-weight: 900 !important;
+  position: relative;
+}
+.usersOpn-info-author:before {
+  content: "";
+  width: 3px;
+  height: 15px;
+  background-color: #0876dd;
+  border-radius: 8px;
+  position: absolute;
+  left: 26px;
+  bottom: 20px;
+}
