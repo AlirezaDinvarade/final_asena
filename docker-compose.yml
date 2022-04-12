@@ -80,7 +80,7 @@ services:
       context: ./Sedreh-Asena-main
     container_name: react
     volumes:
-      - react_build:/react/build
+      - react_build:/react/public
     networks:
       - main
     
