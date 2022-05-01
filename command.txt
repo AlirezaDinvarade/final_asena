@@ -1,0 +1,4 @@
+sudo docker exec postgres psql -U postgres my_db_name < dump.sql
+
+sudo docker system prune --volumes
+

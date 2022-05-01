@@ -18,6 +18,7 @@ import json
 import numpy as np
 from scipy.interpolate import Rbf
 
+
 class get_data:
         def __init__(self ,year ,month ,day ,time):
             self.year = str(year)
@@ -264,25 +265,26 @@ def turn_to_json(data, year, month, day, time, pollutions, directory = None):
     
     return json_data
 
-def main_polygon_value(year = 1400,month = 11, day = 20, time = '11:00'):
+
+def main_polygon_value(year = 1400,month = 11, day = 20, time ='11:00'):
     North_coordinate = 36.2308
     South_coordinate = 35
     East_coordinate = 52.4688
     West_coordinate = 50
     Resolution = 250
-    new_excel_path = "/home/alireza/Desktop/Asena/web/asena/modules/stations_of_iran_new.xlsx"
-    old_excel_path = "/home/alireza/Desktop/Asena/web/asena/modules/stations_of_iran_old.xlsx"
+    # new_excel_path = os.path('./asena/modules/stations_of_iran_new.xlsx')
+    # old_excel_path = os.path('./asena/modules/stations_of_iran_old.xlsx')
     pollutions = ['CO', 'O3', 'NO2', 'SO2',	'PM10',	'PM2_5']
     AQI_pollutions = ['id','CO', 'O3', 'NO2', 'SO2', 'PM10', 'PM2_5','AQI']
 
     p = get_data(year = year, month = month, day = day, time = time)
     df = p.get_data_main()
 
-    stations = pd.read_excel(new_excel_path )
+    stations = pd.read_excel('stations_of_iran_new.xlsx')
     df_tehran = pd.merge(df, stations, on=['StationName_En'])
-    df_tehran = df_tehran.loc[:,~df_tehran.columns.duplicated()]
+    df_tehran = df_tehran.loc[:, ~df_tehran.columns.duplicated()]
 
-    old_stations = pd.read_excel(old_excel_path)
+    old_stations = pd.read_excel('stations_of_iran_old.xlsx')
     final_df = {}
     rbf = pd.DataFrame()
 
@@ -306,8 +308,8 @@ def main_polygon_value(year = 1400,month = 11, day = 20, time = '11:00'):
     rbf['id'] = (rbf.index + 1)
     rbf['id'] = rbf['id'].astype({'id': float})
 
-    final_df['AQI'] = rbf[['AQI','ALongtitudes','ALatitudes','BLongtitudes','BLatitudes','CLongtitudes','CLatitudes','DLongtitudes','DLatitudes']]
-    final_df['id'] = rbf[['id','ALongtitudes','ALatitudes','BLongtitudes','BLatitudes','CLongtitudes','CLatitudes','DLongtitudes','DLatitudes']]
+    final_df['AQI'] = rbf[['AQI', 'ALongtitudes', 'ALatitudes', 'BLongtitudes', 'BLatitudes', 'CLongtitudes', 'CLatitudes','DLongtitudes','DLatitudes']]
+    final_df['id'] = rbf[['id', 'ALongtitudes', 'ALatitudes', 'BLongtitudes', 'BLatitudes', 'CLongtitudes', 'CLatitudes','DLongtitudes','DLatitudes']]
 
     json_file = turn_to_json(data = final_df, year = year, month = month, day = day, time = time, pollutions = AQI_pollutions)
     return json_file
