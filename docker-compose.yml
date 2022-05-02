@@ -13,8 +13,6 @@ services:
   postgres:
     container_name: postgres
     image: postgres:latest
-#    command: psql -c -h postgres"create database asena;"
-#    command: psql -c -h postgres asena < /backup/asena.sql
     environment:
       - POSTGRES_DB=asena
       - POSTGRES_USER=postgres
@@ -22,18 +20,18 @@ services:
     networks:
       - main
     restart: on-failure
-#    volumes:
-#      - postgres_data:/var/lib/postgresql/data
-#      - ./backup:/backup
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
   celery_worker:
+    build:
+      context: ./asena
     container_name: celery_worker
     command: celery -A asena worker -l INFO
     depends_on:
       - app
       - rabbitmq
       - postgres
-    image: app-image
     environment:
       - C_FORCE_ROOT=true
       - CELERY_BROKER=amqp://rabbitmq
@@ -42,13 +40,14 @@ services:
     restart: on-failure
 
   celery_beat:
+    build:
+      context: ./asena
     container_name: celery_beat
     command: celery -A asena beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler 
     depends_on:
       - app
       - rabbitmq
       - postgres
-    image: app-image
     environment:
       - C_FORCE_ROOT="true"
     networks:
@@ -58,10 +57,7 @@ services:
   app:
     build:
       context: ./asena
-      dockerfile: Dockerfile
-#    command: sh -c "python manage.py migrate && gunicorn asena.wsgi -b 0.0.0.0:8000"
-#    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
-    command: sh -c "python manage.py runserver 0.0.0.0:8000"
+    command: gunicorn asena.wsgi --bind 0.0.0.0:8000
     container_name: app
     depends_on:
       - postgres
@@ -81,8 +77,6 @@ services:
     container_name: react
     volumes:
       - react_build:/react/build
-#    ports:
-#      - "3000:3000"
     networks:
       - main
     
@@ -99,7 +93,6 @@ services:
       - "80:8080"
     restart: on-failure
     volumes:
-#      - ./nginx.conf:/etc/nginx/nginx.conf
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - react_build:/var/www/react
     external_links:
@@ -109,5 +102,5 @@ networks:
   main:
 
 volumes:
-#  postgres_data:
+  postgres_data:
   react_build:

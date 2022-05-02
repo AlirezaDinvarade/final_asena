@@ -10,7 +10,7 @@ def get_polygon_module_task():
     insert_list = []
     year, month, day, time = DetailTime()
 
-    json_values = main_polygon_value(year = year , month = month, day = day , time = time )
+    json_values = main_polygon_value(year=year, month=month, day=day, time=time)
     IndicatorsList = json_values["indicator"]
 
     for indicator in IndicatorsList:
@@ -26,9 +26,9 @@ def get_polygon_module_task():
                 PM2_5=info.validated_data['PM2_5'], AQI=info.validated_data['AQI']))
         else:
             print(info.errors)
-    
-    try:
-        PolygonValues.objects.bulk_create(insert_list)
-    except:
-        PolygonValues.objects.bulk_update(insert_list, fields=['CO', 'O3', 'NO2', 'SO2', 'PM10', 'PM2_5','AQI'])             
+
+    polygons = PolygonValues.objects.all()
+    polygons.delete()
+    PolygonValues.objects.bulk_create(insert_list)
     print('Database polygon updated')
+

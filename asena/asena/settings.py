@@ -71,26 +71,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'asena.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-
-        # docker setting
         'NAME': 'asena',
         'USER': 'postgres',
         'PASSWORD': 'Alireza12851376',
         'HOST': 'postgres',
+        # 'HOST': 'localhost',
         'PORT': '5432',
-
-        # docker setting
-        # 'NAME': os.environ["POSTGRES_DB"],
-        # 'USER': os.environ["POSTGRES_USER"],
-        # 'PASSWORD': os.environ["POSTGRES_PASSWORD"],
-        # 'HOST': 'postgres',
-        # 'PORT': '5432',
     }
 }
 
@@ -133,7 +126,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:3000",

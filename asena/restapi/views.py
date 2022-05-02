@@ -26,8 +26,8 @@ class GetPoint(APIView):
             "indicator": {"CO": ser_data.data['CO'], "O3": ser_data.data['O3'],"NO2": ser_data.data['NO2'], "SO2": ser_data.data['SO2'],"PM10": ser_data.data['PM10'],"PM2_5": ser_data.data['PM2_5'],"AQI": ser_data.data['AQI']}
         }
 
-        print(response_json)
-        return Response(data=response_json,headers={'Access-Control-Allow-Origin': 'http://localhost:3000', 'Access-Control-Allow-Credentials':True, 'Access-Control-Allow-Methods' : 'OPTIONS', 'Access-Control-Allow-Headers' : ['Origin', 'Content-Type', 'Accept']})
+
+        return Response(data=response_json,headers={'Access-Control-Allow-Origin': 'http://127.0.0.1', 'Access-Control-Allow-Credentials':True, 'Access-Control-Allow-Methods' : 'OPTIONS', 'Access-Control-Allow-Headers' : ['Origin', 'Content-Type', 'Accept']})
 
 
 class GetPolygons(APIView):
@@ -40,7 +40,7 @@ class GetPolygons(APIView):
         for idx, k in enumerate(range(10,180,10)):
             indicator = {"color" : None, "coordinates": []}
             indicator["color"] = colors[idx]
-            AQIFiltered =  list(filter(lambda sub : sub['AQI'] >= k and sub['AQI'] < k+10, all))
+            AQIFiltered = list(filter(lambda sub : sub['AQI'] >= k and sub['AQI'] < k+10, all))
             for data in AQIFiltered:
                 indicator["coordinates"].append([[[data['ALongitude'], data['ALatitude']],[data['BLongitude'], data['BLatitude']],[data['CLongitude'], data['CLatitude']],[data['DLongitude'], data['DLatitude']],[data['ALongitude'], data['ALatitude']]]])
             final_indicator.append(indicator) 
@@ -51,15 +51,14 @@ class GetPolygons(APIView):
             "indicator": final_indicator
         } 
 
-        print(response_json)
-        return Response(data=response_json,headers={'Access-Control-Allow-Origin': 'http://localhost:3000', 'Access-Control-Allow-Credentials': True, 'Access-Control-Allow-Methods': 'OPTIONS', 'Access-Control-Allow-Headers': ['Origin', 'Content-Type', 'Accept']})
+        return Response(data=response_json, headers={'Access-Control-Allow-Origin': 'http://127.0.0.1', 'Access-Control-Allow-Credentials': True, 'Access-Control-Allow-Methods': 'OPTIONS', 'Access-Control-Allow-Headers': ['Origin', 'Content-Type', 'Accept']})
 
 
 class DeletePolygons(APIView):
     def get(self, request):
         polygons = PolygonValues.objects.all()
         polygons.delete()
-        return Response({"success":"all polygons database removed"})
+        return Response({"success": "all polygons database removed"})
 
 
 
