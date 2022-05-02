@@ -27,7 +27,7 @@ class GetPoint(APIView):
         }
 
 
-        return Response(data=response_json,headers={'Access-Control-Allow-Origin': 'http://127.0.0.1', 'Access-Control-Allow-Credentials':True, 'Access-Control-Allow-Methods' : 'OPTIONS', 'Access-Control-Allow-Headers' : ['Origin', 'Content-Type', 'Accept']})
+        return Response(data=response_json,headers={'Access-Control-Allow-Origin': 'http://185.226.117.165', 'Access-Control-Allow-Credentials':True, 'Access-Control-Allow-Methods' : 'OPTIONS', 'Access-Control-Allow-Headers' : ['Origin', 'Content-Type', 'Accept']})
 
 
 class GetPolygons(APIView):
@@ -51,7 +51,7 @@ class GetPolygons(APIView):
             "indicator": final_indicator
         } 
 
-        return Response(data=response_json, headers={'Access-Control-Allow-Origin': 'http://127.0.0.1', 'Access-Control-Allow-Credentials': True, 'Access-Control-Allow-Methods': 'OPTIONS', 'Access-Control-Allow-Headers': ['Origin', 'Content-Type', 'Accept']})
+        return Response(data=response_json, headers={'Access-Control-Allow-Origin': 'http://185.226.117.165', 'Access-Control-Allow-Credentials': True, 'Access-Control-Allow-Methods': 'OPTIONS', 'Access-Control-Allow-Headers': ['Origin', 'Content-Type', 'Accept']})
 
 
 class DeletePolygons(APIView):
