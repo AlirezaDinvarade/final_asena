@@ -27,17 +27,17 @@ class GetPoint(APIView):
         }
 
 
-        return Response(data=response_json,headers={'Access-Control-Allow-Origin': 'http://127.0.0.1', 'Access-Control-Allow-Credentials':True, 'Access-Control-Allow-Methods' : 'OPTIONS', 'Access-Control-Allow-Headers' : ['Origin', 'Content-Type', 'Accept']})
+        return Response(data=response_json,headers={'Access-Control-Allow-Origin': 'http://localhost', 'Access-Control-Allow-Credentials':True, 'Access-Control-Allow-Methods' : 'OPTIONS', 'Access-Control-Allow-Headers' : ['Origin', 'Content-Type', 'Accept']})
 
 
 class GetPolygons(APIView):
     def post(self, request):
         all = PolygonValues.objects.all().values()
 
-        colors = ['#01F0FF','#0DF5A6','#19FB4D','#2EFF01','#72FF01','#B7FF01','#FAFE01','#FBC401','#FC8C01','#FD5301','#FE3C01','#FE2501','#FF0F01','#FF0106','#FF0117','#9F000A','#6F068B']
+        colors = ['#01F0FF', '#0DF5A6', '#19FB4D', '#2EFF01', '#72FF01', '#B7FF01', '#FAFE01', '#FBC401', '#FC8C01', '#FD5301', '#FE3C01', '#FE2501', '#FF0F01','#FF0106','#FF0117','#9F000A','#6F068B']
         final_indicator = []
 
-        for idx, k in enumerate(range(10,180,10)):
+        for idx, k in enumerate(range(10, 180, 10)):
             indicator = {"color" : None, "coordinates": []}
             indicator["color"] = colors[idx]
             AQIFiltered = list(filter(lambda sub : sub['AQI'] >= k and sub['AQI'] < k+10, all))
@@ -51,7 +51,7 @@ class GetPolygons(APIView):
             "indicator": final_indicator
         } 
 
-        return Response(data=response_json, headers={'Access-Control-Allow-Origin': 'http://127.0.0.1', 'Access-Control-Allow-Credentials': True, 'Access-Control-Allow-Methods': 'OPTIONS', 'Access-Control-Allow-Headers': ['Origin', 'Content-Type', 'Accept']})
+        return Response(data=response_json, headers={'Access-Control-Allow-Origin': 'http://loalhost', 'Access-Control-Allow-Credentials': True, 'Access-Control-Allow-Methods': 'OPTIONS', 'Access-Control-Allow-Headers': ['Origin', 'Content-Type', 'Accept']})
 
 
 class DeletePolygons(APIView):
